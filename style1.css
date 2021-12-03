@@ -12,6 +12,14 @@ body {
     border: 20px dashed black;
     margin: 30px;
     width: 300px;
+    overflow: auto;
+}
+
+.img {
+    width: 500;
+    height: 500;
+    background: url('images/magnifying.png') no-repeat;
+    margin: 30px;
 }
 
 * {
