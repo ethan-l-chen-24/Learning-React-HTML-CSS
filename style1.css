@@ -25,3 +25,28 @@ body {
 * {
     box-sizing: border-box;
 }
+
+@media (min-width: 950px) and (max-width: 1199px) {
+    .col-md-1 {
+        width: 8.33%
+    }
+    .col-md-2 {
+        width: 16.66%
+    }
+}
+@media (max-width: 949px) {
+    .col-sm-1 {
+        width: 8.33%
+    }
+    .col-sm-2 {
+        width: 16.66%
+    }
+}
+@media (min-width: 1200px) {
+    .col-lg-1 {
+        width: 8.33%
+    }
+    .col-slg-2 {
+        width: 16.66%
+    }
+}
