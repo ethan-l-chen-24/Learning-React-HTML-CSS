@@ -1,3 +1,9 @@
+header {
+    text-align: center;
+    font-size: 36px;
+    font-weight: bold;
+}
+
 /* desktop view */
 @media (min-width: 992px) {
 
