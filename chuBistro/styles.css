@@ -196,3 +196,11 @@ body {
   color: #fff;
   opacity: .8;
 }
+
+.panel-footer {
+  margin-top: 30px;
+  padding-top: 35px;
+  padding-bottom: 30px;
+  background-color: #222;
+  border-top: 0;
+}
