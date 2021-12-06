@@ -25,3 +25,4 @@ var apple = {
 };
 
 console.log(apple);
+console.log("founders last name is " + apple["founder"]["lastName"]);
