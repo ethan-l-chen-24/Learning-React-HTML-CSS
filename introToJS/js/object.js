@@ -12,3 +12,16 @@ console.log(company);
 console.log("Company name is " + company.name);
 console.log("Stock price is " + company["stock of company"]);
 console.log("Competitor is " + company[competitor]);
+
+
+// NEW, BETTER OBJECT WAY, OBJECT LITERAL
+var apple = {
+    name: "Apple",
+    founder: {
+        firstName: "Steve",
+        lastName: "Jobs"
+    },
+    $stock: 350
+};
+
+console.log(apple);
