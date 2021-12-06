@@ -30,3 +30,20 @@ if(y === "5") {
 } else {
     console.log("5 does not strict equal '5'");
 }
+
+if(false || null || undefined || "" || 0 || NaN) {
+    console.log("This line won't execute");
+} else {
+    console.log("All false");
+}
+
+if(true && "hello" && 1 && -1 && "false") {
+    console.log("All true");
+}
+
+function handleUndefined(variable) {
+    variable = variable || "value";
+    console.log("Variable value is " + variable);
+}
+handleUndefined("noodles");
+handleUndefined();
