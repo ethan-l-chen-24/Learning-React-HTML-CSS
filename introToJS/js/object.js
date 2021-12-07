@@ -21,11 +21,16 @@ var apple = {
         firstName: "Steve",
         lastName: "Jobs"
     },
-    $stock: 350
+    $stock: 350,
+
+    doubleStock: function() {
+        return 2*this["$stock"];
+    }
 };
 
 console.log(apple);
 console.log("founders last name is " + apple["founder"]["lastName"]);
+console.log(apple.doubleStock());
 
 var a = { x: 7 };
 var b = a;
