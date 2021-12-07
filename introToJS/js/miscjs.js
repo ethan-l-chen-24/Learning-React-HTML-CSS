@@ -6,4 +6,5 @@
     }
 
     window.ethanGreeter = ethanGreeter;
+    
 })(window);
