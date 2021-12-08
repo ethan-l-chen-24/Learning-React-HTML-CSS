@@ -1,3 +1,8 @@
 function sayHello() {
-    console.log(document.getElementById("name"));
+    var name = document.getElementById("name").value;
+    var message = "Hello " + name + "!";
+
+    document
+        .getElementById("content")
+        .textContent = message;
 }
