@@ -1,19 +1,32 @@
-function sayHello() {
-    var name = document.getElementById("name").value;
-    var message = "Hello " + name + "!";
+document.addEventListener("DOMContentLoaded",
+    function(event) {
 
-    document
-        .getElementById("content")
-        .textContent = message;
-
-    if (name === "student") {
-        var title = 
+        function sayHello() {
+            var name = document.getElementById("name").value;
+            var message = "Hello " + name + "!";
+        
             document
-                .querySelector("#title")
-                .textContent;
-        title += " & Lovin' it!";
-        document
-            .querySelector("#title")
-            .textContent = title;
-    }
-}
+                .getElementById("content")
+                .textContent = message;
+        
+            if (name === "student") {
+                var title = 
+                    document
+                        .querySelector("#title")
+                        .textContent;
+                title += " & Lovin' it!";
+                document
+                    .querySelector("#title")
+                    .textContent = title;
+            }
+        }
+        
+        // Unobstrusive event binding
+        document.querySelector("button")
+            .addEventListener("click", sayHello);
+        
+        //document.querySelector("button")
+        //    .onClick = sayHello;
+
+    });
+

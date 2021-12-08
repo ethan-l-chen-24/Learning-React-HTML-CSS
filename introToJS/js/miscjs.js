@@ -1,4 +1,7 @@
+// IIFE
 (function(window) {
+
+    // fake namespace
     var ethanGreeter = {};
     ethanGreeter.name = "ethan";
     ethanGreeter.sayHi = function(name) {
