@@ -2,6 +2,8 @@ document.addEventListener("DOMContentLoaded",
     function(event) {
 
         function sayHello() {
+            console.log(event);
+            
             var name = document.getElementById("name").value;
             var message = "Hello " + name + "!";
         
@@ -27,6 +29,15 @@ document.addEventListener("DOMContentLoaded",
         
         //document.querySelector("button")
         //    .onClick = sayHello;
+
+        document.querySelector("body")
+            .addEventListener("mousemove", 
+                function(event) {
+                    if(event.shiftKey) {
+                        console.log("(x, y): (" + event.clientX + ", " + event.clientY + ")");
+                    }
+                }
+            )
 
     });
 
