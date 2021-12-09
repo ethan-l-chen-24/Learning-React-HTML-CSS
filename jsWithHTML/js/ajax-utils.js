@@ -1,5 +1,5 @@
 // IIFE
-(function(window) {
+(function(global) {
 
     // sets up a fake namespace
     var ajaxUtils = {};
@@ -10,9 +10,9 @@
             return (new XMLHttpRequest());
         } else if(window.ActiveXObject) {
             // for very old browsers
-            return (new ActiveXObject("Microsofr.XMLHTTP"));
+            return (new ActiveXObject("Microsoft.XMLHTTP"));
         } else {
-            globalThis.alert("Ajax is not supported!");
+            global.alert("Ajax is not supported!");
             return null;
         }
     }
@@ -24,7 +24,7 @@
                 function() {
                     handleResponse(request, responseHandler);
                 };
-            request.open("GET", requestURL, true); // true denotes asynchronous
+            request.open("GET", requestUrl, true); // true denotes asynchronous
             request.send(null);
         };
 
@@ -34,6 +34,7 @@
         }
     }
 
-    globalThis.$ajaxUtils = ajaxUtils;
+    // expose to global
+    global.$ajaxUtils = ajaxUtils;
 
 })(window);
