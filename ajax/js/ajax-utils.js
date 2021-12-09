@@ -18,17 +18,25 @@
     }
 
     ajaxUtils.sendGetRequest = 
-        function(requestUrl, responseHandler) {
+        function(requestUrl, responseHandler, isJsonResponse) {
             var request = getRequestObject();
             request.onreadystatechange = 
                 function() {
-                    handleResponse(request, responseHandler);
+                    handleResponse(request, responseHandler, isJsonResponse);
                 };
             request.open("GET", requestUrl, true); // true denotes asynchronous
             request.send(null);
         };
 
-    function handleResponse(request, responseHandler) {
+    function handleResponse(request, responseHandler, isJsonResponse) {
+        // default to true
+        if(isJsonResponse == undefined) {
+            isJsonResponse = true;
+        }
+
+        if(isJsonResponse) {
+            responseHandler(JSON.parse(request.responseText));
+        }
         if((request.readyState == 4) && (request.status == 200)) {
             responseHandler(request);
         }

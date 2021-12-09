@@ -6,14 +6,30 @@ document.addEventListener("DOMContentLoaded",
                 var self = this;
 
                 $ajaxUtils
-                    .sendGetRequest("/data/name.txt",
-                        function(request) {
+                    .sendGetRequest("/data/name.json",
+                        function(res) {
 
+                            var message = res.firstName + " " + res.lastName;
+                            if(res.likesChineseFood) {
+                                message += " likes Chinese food";
+                            } else {
+                                message += " does not like Chinese food";
+                            }
+
+                            message += " and uses ";
+                            message += res.numberOfDisplays;
+                            message += " for coding.";
+
+                            document.querySelector("#content")
+                                .textContent = message;
+
+                            /*
                             console.log("here");
-                            var name = request.responseText;
+                            var name = res.responseText;
 
                             document.querySelector("#content")
                                 .innerHTML = "<h2>Hello " + name + "!";
+                                */
                         });
 
                 
