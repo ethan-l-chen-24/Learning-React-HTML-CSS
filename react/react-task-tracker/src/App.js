@@ -1,9 +1,9 @@
+import Header from './components/Header'
 
 function App() {
   return (
     <div className="container">
-      <div> this is my first app </div>
-      <div> woah I can put two things in this </div>
+      <Header title='Hello' />
     </div>
   );
 }
