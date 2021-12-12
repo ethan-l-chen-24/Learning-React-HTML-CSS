@@ -28,9 +28,13 @@ function App() {
       }
   ]);
 
+  const [formVisible, setForm] = useState(false)
+
   // add task
   const addTask = (task) => {
-    console.log(task);
+    const id = Math.floor(Math.random() * 10000) + 1;
+    const newTask = { id, ...task }
+    setTasks([...tasks, newTask])
   }
 
   // delete task
@@ -40,18 +44,16 @@ function App() {
 
   // Toggle Reminder
   const toggleReminder = (id) => {
-    setTasks(tasks.map((task) => {
-      if(task.id === id) {
-        task.reminder = !task.reminder;
-      }
-      return task;
-    }))
+    setTasks(tasks.map((task) => (task.id === id ? { ...task, reminder: !task.reminder} : task)))
   }
+
+  // Toggle form visibility
+  const toggleForm
 
   return (
     <div className="container">
       <Header />
-      <AddTask onAdd={addTask} />
+      {showAddTask && <AddTask onAdd={addTask} />}
       {tasks.length > 0 ? 
       <Tasks tasks={tasks} onDelete={deleteTask} onToggle={toggleReminder}/>
       : 'No Tasks To Show'  
